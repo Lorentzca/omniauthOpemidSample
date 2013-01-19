@@ -1,0 +1,18 @@
+<h1>Home#index</h1>
+<p>Find me in app/views/home/index.html.erb</p>
+
+
+<% #flash.noticeはログイン時のウェルカムメッセージや、項目追加の成功通知など、ユーザに簡単な通知を行いたい時に利用するもの %>
+
+<dif><%= flash.notice %></div>
+<div id="user_nav">
+  <% if current_user %>
+    User Info,
+    <pre>
+    <%= current_user %>
+    </pre>
+    <%= link_to "Sign Out", signout_path %>
+  <% else %>
+    <%= link_to "Sign in with Google", "/auth/open_id?openid_url=https://www.google.com/accounts/o8/id" %>
+  <% end %> 
+</div>
