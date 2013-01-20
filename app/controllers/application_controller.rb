@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   #単発のヘルパーはやだなって時とかこれで。
   helper_method :current_user
   
+  #||= は自己代入。
   private
   def current_user
     @current_user ||= session[:user_info] if session[:user_info]
