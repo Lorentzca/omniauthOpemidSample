@@ -1,4 +1,19 @@
+<%=
+=begin
 <h1>Login#index</h1>
 <p>Find me in app/views/login/index.html.erb</p>
+=end
+%>
 
-<%= link_to 'ligin', '/auth/:provider' %>
+<% if current_user %>
+<pre>
+ようこそ！
+  <%= link_to "home", "/home/index" %>
+</pre>
+<% else %>
+<pre>
+サインインして下さい
+  <%= link_to "Sign in with Google", "/auth/open_id?openid_url=https://www.google.com/accounts/o8/id" %>
+  <%= link_to "トップページ", "/home/index" %>
+</pre>
+<% end %> 
